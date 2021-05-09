@@ -10,5 +10,5 @@ with open('index.html', 'r') as html_file:
     course_carts = soup.find_all('div', class_='card')
     for courses in course_carts:
         course_name = courses.h5.text
-        course_price = courses.a.text
+        course_price = courses.a.text.split()[-1]
         print(f'{course_name} for {course_price}')
